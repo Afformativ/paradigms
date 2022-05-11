@@ -2,12 +2,14 @@ states([q0, q1, q2]).
 symbols([a, b]).
 transition(q0, a, q1).
 transition(q0, b, q2).
-transition(q1, a, q2).
-transition(q1, b, q0).
+transition(q1, a, q3).
+transition(q1, b, q1).
 transition(q2, a, q2).
-transition(q2, b, q1).
+transition(q2, b, q3).
+transition(q3, a, q1).
+transition(q3, b, q3).
 startState(q0).
-finalStates([q2]).
+finalStates([q3]).
 
 search(0, S, []) :-
     finalStates(FinalStates),
